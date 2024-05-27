@@ -1,0 +1,16 @@
+image: openjdk:11-jdk-slim
+# описываем с помощью какого докер образа выполняем билд и тест
+stages:
+  - build
+  - test
+# описываем стадии сборка и тестирование
+build:
+  stage: deploy
+  script:
+    - ./gradlew build -x test
+  # выполняется сборка. Ключ х - пропустить тесты
+test:
+  stage: test
+  script:
+    - ./gradlew test
+# выполняется тест
