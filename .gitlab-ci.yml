@@ -5,7 +5,7 @@ stages:
   - test
 # описываем стадии сборка и тестирование
 build:
-  stage: deploy
+  stage: build
   script:
     - ./gradlew build -x test
   # выполняется сборка. Ключ х - пропустить тесты
